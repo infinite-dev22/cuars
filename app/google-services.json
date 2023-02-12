@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "217145156034",
+    "project_id": "first-outlet-310521",
+    "storage_bucket": "first-outlet-310521.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:217145156034:android:1b32529e8f7dd40e18765b",
+        "android_client_info": {
+          "package_name": "com.example.cuars"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "217145156034-90abr2t8bfcpdlmobane1k5pohsdof80.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2VWFCQFMVQkyRHOLOifaO2DbQwYsXcjM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "217145156034-90abr2t8bfcpdlmobane1k5pohsdof80.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:217145156034:android:6221445cfc2de8af18765b",
+        "android_client_info": {
+          "package_name": "mycroft.ai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "217145156034-90abr2t8bfcpdlmobane1k5pohsdof80.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2VWFCQFMVQkyRHOLOifaO2DbQwYsXcjM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "217145156034-90abr2t8bfcpdlmobane1k5pohsdof80.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

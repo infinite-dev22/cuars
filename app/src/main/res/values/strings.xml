@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Case Reporter</string>
+
+    <!--  Victim Details  -->
+    <string name="page_header">Victim Details</string>
+    <string name="section_header_one">Victim Details</string>
+    <string name="victim_name">Victim\'s full name.</string>
+    <string name="victim_address">Victim\'s address.</string>
+    <string name="victim_email">Victim\'s email address.</string>
+    <string name="victim_phone">Victim\'s phone contact.</string>
+
+    <string name="section_header_two">Incident Details</string>
+    <string name="location">Incident\'s location.</string>
+    <string name="description">Incident\'s description.</string>
+    <string name="witness">Witnesses available?</string>
+    <string name="victim_injured">Is victim injured?</string>
+    <string name="injury">Describe victim\'s injury.</string>
+
+    <string name="main_topbar_title">Incident Reporter</string>
+    <string name="aid_topbar_title">First Aid</string>
+    <string name="form_topbar_title">Incident Form</string>
+</resources>
