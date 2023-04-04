@@ -18,7 +18,7 @@ import com.example.cuars.viewModels.FirstAidViewModel
 import com.example.cuars.viewModels.IncidentsViewModel
 
 @Composable
-fun NavigationMap(detailViewModel: DetailViewModel, incidentsViewModel: IncidentsViewModel) {
+fun NavigationMap(detailViewModel: DetailViewModel) {
     val navController = rememberNavController()
     val sharedViewModel: SharedViewModel = viewModel()
     NavHost(navController = navController, startDestination = Screen.IncidentsScreen.route) {

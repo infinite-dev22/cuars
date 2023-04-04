@@ -1,7 +1,5 @@
 package com.example.cuars.viewModels
 
-
-import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -46,14 +44,6 @@ class DetailViewModel(
         detailUiState = detailUiState.copy(incidentDescription = incidentDescription)
     }
 
-    fun onIncidentWitnessAvailableChange(incidentWitnessAvailable: Boolean) {
-        detailUiState = detailUiState.copy(incidentWitnessAvailable = incidentWitnessAvailable)
-    }
-
-    fun onIncidentVictimInjuredChange(incidentVictimInjured: Boolean) {
-        detailUiState = detailUiState.copy(incidentVictimInjured = incidentVictimInjured)
-    }
-
     fun onIncidentInjuryDescriptionChange(incidentInjuryDescription: String) {
         detailUiState = detailUiState.copy(incidentInjuryDescription = incidentInjuryDescription)
     }
@@ -75,10 +65,7 @@ class DetailViewModel(
                 detailUiState = detailUiState.copy(noteAddedStatus = it)
             }
             resetState()
-        } else {
         }
-
-
     }
 
     fun setEditFields(incident: IncidentInformation) {
@@ -96,43 +83,6 @@ class DetailViewModel(
 
     }
 
-    fun getIncident(incidentInformationId: String) {
-        repository.getIncident(
-            incidentInformationId = incidentInformationId,
-            onError = {},
-        ) {
-            detailUiState = detailUiState.copy(selectedIncident = it)
-            detailUiState.selectedIncident?.let { it1 -> setEditFields(it1) }
-        }
-    }
-
-    fun updateIncident(
-        incidentInformationId: String
-    ) {
-        repository.updateIncident(
-            incidentInformationId = incidentInformationId,
-            userId = user!!.uid,
-            name = detailUiState.name,
-            email = detailUiState.email,
-            address = detailUiState.address,
-            phone = detailUiState.phone,
-            incidentLocation = detailUiState.incidentLocation,
-            incidentDescription = detailUiState.incidentDescription,
-            incidentWitnessAvailable = detailUiState.incidentWitnessAvailable,
-            incidentVictimInjured = detailUiState.incidentVictimInjured,
-            incidentInjuryDescription = detailUiState.incidentInjuryDescription,
-        ) {
-            detailUiState = detailUiState.copy(updateIncidentStatus = it)
-        }
-    }
-
-    fun resetIncidentAddedStatus() {
-        detailUiState = detailUiState.copy(
-            noteAddedStatus = false,
-            updateIncidentStatus = false,
-        )
-    }
-
     fun resetState() {
         detailUiState = detailUiState.copy(name = "")
         detailUiState = detailUiState.copy(email = "")
@@ -141,9 +91,6 @@ class DetailViewModel(
         detailUiState = detailUiState.copy(incidentLocation = "")
         detailUiState = detailUiState.copy(incidentDescription = "")
         detailUiState = detailUiState.copy(incidentInjuryDescription = "")
-
-        Log.d("TAG", "Running it")
-
     }
 
 

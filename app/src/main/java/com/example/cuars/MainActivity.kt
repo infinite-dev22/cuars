@@ -35,21 +35,19 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     val detailViewModel = viewModel(modelClass = DetailViewModel::class.java)
-                    val IncidentsViewModel = viewModel(modelClass = IncidentsViewModel::class.java)
-                    val firebaseDatabase = FirebaseDatabase.getInstance();
-                    val databaseReference = firebaseDatabase.getReference("IncidentInformation");
+                    viewModel(modelClass = IncidentsViewModel::class.java)
+                    val firebaseDatabase = FirebaseDatabase.getInstance()
+                    firebaseDatabase.getReference("IncidentInformation")
 
-                    NavigationMap(detailViewModel, IncidentsViewModel)
+                    NavigationMap(detailViewModel)
                 }
             }
         }
     }
 
-     fun signIn () {
+    private fun signIn() {
         val providers = arrayListOf(
             AuthUI.IdpConfig.EmailBuilder().build(),
-//            AuthUI.IdpConfig.PhoneBuilder().build(),
-//            AuthUI.IdpConfig.GoogleBuilder().build(),
         )
 
         val signinIntent = AuthUI.getInstance()
@@ -60,19 +58,24 @@ class MainActivity : ComponentActivity() {
         signInLauncher.launch(signinIntent)
     }
 
-    val signInLauncher = registerForActivityResult(
+    private val signInLauncher = registerForActivityResult(
         FirebaseAuthUIActivityResultContract()
-    ){
-            res -> this.signInResult(res)
+    ) { res ->
+        this.signInResult(res)
     }
 
-    fun signInResult(result: FirebaseAuthUIAuthenticationResult){
-        val response = result.idpResponse
-        if (result.resultCode == RESULT_OK){
+    private fun signInResult(result: FirebaseAuthUIAuthenticationResult) {
+        result.idpResponse
+        if (result.resultCode == RESULT_OK) {
             user = FirebaseAuth.getInstance().currentUser
-            Toast.makeText(this.baseContext, "SignedI As: " + user?.displayName, Toast.LENGTH_SHORT)
+            Toast.makeText(this.baseContext, "Signin Successful", Toast.LENGTH_SHORT)
+                .show()
         } else {
-            Toast.makeText(this.baseContext, "Error log In: " + response?.error?.errorCode, Toast.LENGTH_SHORT)
+            Toast.makeText(
+                this.baseContext,
+                "Signin Failed",
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 }

@@ -35,10 +35,8 @@ import com.example.cuars.EditTextAreaInput
 import com.example.cuars.EditTextInput
 import com.example.cuars.R
 import com.example.cuars.TopAppBarSlave
-import com.example.cuars.models.SharedViewModel
 import com.example.cuars.viewModels.DetailUiState
 import com.example.cuars.viewModels.DetailViewModel
-
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

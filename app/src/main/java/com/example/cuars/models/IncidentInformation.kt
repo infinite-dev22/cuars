@@ -1,7 +1,5 @@
 package com.example.cuars.models
 
-import com.google.firebase.Timestamp
-
 
 data class IncidentInformation(
     val userId: String = "",
